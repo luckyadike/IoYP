@@ -124,7 +124,7 @@
 #body.help-page {
     font-size: 14px;
     line-height: 143%;
-    color: #333;
+    /*color: #333;*/
 }
 
 .help-page a {
