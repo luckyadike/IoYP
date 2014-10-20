@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace Fonitor
+﻿namespace Fonitor
 {
+	using Fonitor.Handlers;
+	using System.Web.Http;
+
 	public static class WebApiConfig
 	{
 		public static void Register(HttpConfiguration config)
@@ -19,6 +17,9 @@ namespace Fonitor
 				routeTemplate: "api/{controller}/{id}",
 				defaults: new { id = RouteParameter.Optional }
 			);
+
+			// Message handlers
+			config.MessageHandlers.Add(new RequireHttpsMessageHandler());
 		}
 	}
 }
